@@ -1,0 +1,30 @@
+<div class="container-form"> 
+    <form class="form-floating">
+
+        <div class="form-header">
+            <img src="https://img.icons8.com/dusk/64/undefined/apple-calculator.png" alt=""/>
+            <h1 class="h3 mb-3 fw-normal">Calculadora</h1>
+          </div>
+        
+          <div class="container-resultado">
+            <app-sum-page [valoresCalculo]="valoresCalculo"></app-sum-page>
+          </div>
+        
+    
+        <div class="form-floating mb-3">
+            <input [(ngModel)]="valoresCalculo.primeiroValor" required name="primeiro-valor" type="number" class="form-control" id="floatingInput" placeholder="Informe o 1º valor">
+            <label for="floatingInput">Informe o 1º valor</label>
+        </div>
+    
+          <div class="form-floating">
+            <input [(ngModel)]="valoresCalculo.segundoValor" required name="segundo-valor" type="number" class="form-control" id="floatingInput" placeholder="Informe o 2º valor">
+            <label for="floatingInput">Informe o 2º valor</label>
+          </div>
+    
+        <div class="container-btn col-12">
+            <button class="btn btn-primary" type="submit" [disabled]="!isValid()" (click)="calcular()">Calcular</button>
+            <button class="btn btn-primary btn-clean" type="submit" (click)="limpar()">Limpar</button>
+        </div>
+      </form>
+</div>
+
